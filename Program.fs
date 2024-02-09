@@ -11,5 +11,10 @@ type LinkedList<'T> =
         new(v: 'T, n: Next<LinkedList<'T>>) = { Value = v; Next = n }
     end
 
-let b = new LinkedList<string>("sla", None)
-let a = new LinkedList<string>("sla", Some(ref b))
+let b = new LinkedList<string>("b value", None)
+let a = new LinkedList<string>("a value", Some(ref b))
+
+System.Console.WriteLine(a.Value)
+System.Console.WriteLine(b.Value)
+System.Console.WriteLine(a.Next)
+System.Console.WriteLine(b.Next)
