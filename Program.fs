@@ -1,2 +1,15 @@
-﻿// For more information see https://aka.ms/fsharp-console-apps
-printfn "Hello from F#"
+﻿// printfn "Hello from F#"
+
+type Next<'T> =
+    | Some of ref<'T>
+    | None
+
+type LinkedList<'T> =
+    struct
+        val Value: 'T
+        val Next: Next<LinkedList<'T>>
+        new(v: 'T, n: Next<LinkedList<'T>>) = { Value = v; Next = n }
+    end
+
+let b = new LinkedList<string>("sla", None)
+let a = new LinkedList<string>("sla", Some(ref b))
