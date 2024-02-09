@@ -16,5 +16,3 @@ let a = new LinkedList<string>("a value", Some(ref b))
 
 System.Console.WriteLine(a.Value)
 System.Console.WriteLine(b.Value)
-System.Console.WriteLine(a.Next)
-System.Console.WriteLine(b.Next)
