@@ -1,21 +1,21 @@
 package algorithms
 
-func TwoPointer[T any](array []T) []T {
-	if len(array) <= 1 {
-		return array
+func TwoPointer[T any](arr []T) []T {
+	if len(arr) <= 1 {
+		return arr
 	}
 
 	l := 0
-	r := len(array) - 1
+	r := len(arr) - 1
 
 	for l <= r {
-		hold := array[l]
-		array[l] = array[r]
-		array[r] = hold
+		hold := arr[l]
+		arr[l] = arr[r]
+		arr[r] = hold
 
 		l += 1
 		r -= 1
 	}
 
-	return array
+	return arr
 }
