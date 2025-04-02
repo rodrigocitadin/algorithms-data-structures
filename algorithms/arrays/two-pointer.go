@@ -1,22 +1,21 @@
 package arrays
 
-func TwoPointer(text string) string {
-	runes := []rune(text)
-	if len(runes) <= 1 {
-		return text
+func TwoPointer[T any](array []T) []T {
+	if len(array) <= 1 {
+		return array
 	}
 
 	l := 0
-	r := len(runes) - 1
+	r := len(array) - 1
 
 	for l <= r {
-		hold := runes[l]
-		runes[l] = runes[r]
-		runes[r] = hold
+		hold := array[l]
+		array[l] = array[r]
+		array[r] = hold
 
 		l += 1
 		r -= 1
 	}
 
-	return string(runes)
+	return array
 }
